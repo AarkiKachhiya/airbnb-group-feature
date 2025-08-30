@@ -1,981 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Airbnb - Group Travel Planning</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="nav-brand">
-          <img src="./assets/images/logo1.svg" alt="Airbnb Logo" class="logo" />
-          <img src="./assets/images/logo2.svg" alt="Airbnb" class="brand-text" />
-        </div>
-        <div class="nav-actions">
-          <button class="btn btn-secondary">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 5.33325C13.1046 5.33325 14 4.43782 14 3.33325C14 2.22868 13.1046 1.33325 12 1.33325C10.8954 1.33325 10 2.22868 10 3.33325C10 4.43782 10.8954 5.33325 12 5.33325Z"
-                stroke="#262626"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M4 10C5.10457 10 6 9.10457 6 8C6 6.89543 5.10457 6 4 6C2.89543 6 2 6.89543 2 8C2 9.10457 2.89543 10 4 10Z"
-                stroke="#262626"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12 14.6667C13.1046 14.6667 14 13.7713 14 12.6667C14 11.5622 13.1046 10.6667 12 10.6667C10.8954 10.6667 10 11.5622 10 12.6667C10 13.7713 10.8954 14.6667 12 14.6667Z"
-                stroke="#262626"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M5.72656 9.00659L10.2799 11.6599"
-                stroke="#262626"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M10.2732 4.34009L5.72656 6.99342"
-                stroke="#262626"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
 
-            Invite Friends
-          </button>
-          <button class="btn btn-primary">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.44729 2.75735C6.48402 2.37091 6.66351 2.01205 6.95069 1.75087C7.23787 1.4897 7.61211 1.34497 8.00029 1.34497C8.38847 1.34497 8.76271 1.4897 9.04989 1.75087C9.33707 2.01205 9.51656 2.37091 9.55329 2.75735C9.57537 3.00699 9.65727 3.24763 9.79205 3.45891C9.92683 3.67019 10.1105 3.84589 10.3276 3.97114C10.5447 4.09638 10.7887 4.16749 11.0391 4.17843C11.2895 4.18938 11.5388 4.13984 11.766 4.03402C12.1187 3.87387 12.5184 3.8507 12.8873 3.96901C13.2562 4.08732 13.5678 4.33865 13.7616 4.67409C13.9554 5.00953 14.0175 5.40507 13.9357 5.78373C13.854 6.1624 13.6342 6.4971 13.3193 6.72269C13.1142 6.86658 12.9468 7.05776 12.8312 7.28004C12.7157 7.50231 12.6553 7.74916 12.6553 7.99969C12.6553 8.25021 12.7157 8.49706 12.8312 8.71934C12.9468 8.94161 13.1142 9.13279 13.3193 9.27669C13.6342 9.50228 13.854 9.83697 13.9357 10.2156C14.0175 10.5943 13.9554 10.9898 13.7616 11.3253C13.5678 11.6607 13.2562 11.9121 12.8873 12.0304C12.5184 12.1487 12.1187 12.1255 11.766 11.9654C11.5388 11.8595 11.2895 11.81 11.0391 11.8209C10.7887 11.8319 10.5447 11.903 10.3276 12.0282C10.1105 12.1535 9.92683 12.3292 9.79205 12.5405C9.65727 12.7517 9.57537 12.9924 9.55329 13.242C9.51656 13.6285 9.33707 13.9873 9.04989 14.2485C8.76271 14.5097 8.38847 14.6544 8.00029 14.6544C7.61211 14.6544 7.23787 14.5097 6.95069 14.2485C6.66351 13.9873 6.48402 13.6285 6.44729 13.242C6.42525 12.9923 6.34336 12.7516 6.20854 12.5402C6.07371 12.3288 5.88994 12.1531 5.67278 12.0278C5.45562 11.9026 5.21147 11.8315 4.96101 11.8206C4.71055 11.8097 4.46116 11.8594 4.23396 11.9654C3.88122 12.1255 3.48151 12.1487 3.11263 12.0304C2.74374 11.9121 2.43207 11.6607 2.23828 11.3253C2.04449 10.9898 1.98244 10.5943 2.0642 10.2156C2.14596 9.83697 2.36569 9.50228 2.68063 9.27669C2.88571 9.13279 3.05311 8.94161 3.16868 8.71934C3.28426 8.49706 3.34459 8.25021 3.34459 7.99969C3.34459 7.74916 3.28426 7.50231 3.16868 7.28004C3.05311 7.05776 2.88571 6.86658 2.68063 6.72269C2.36614 6.49698 2.14679 6.16242 2.06523 5.78401C1.98366 5.4056 2.0457 5.01038 2.23928 4.67516C2.43287 4.33994 2.74417 4.08867 3.11269 3.97018C3.4812 3.85169 3.88061 3.87444 4.23329 4.03402C4.46046 4.13984 4.70979 4.18938 4.96016 4.17843C5.21053 4.16749 5.45458 4.09638 5.67165 3.97114C5.88872 3.84589 6.07242 3.67019 6.2072 3.45891C6.34198 3.24763 6.42388 3.00699 6.44596 2.75735"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbnb - Group Travel Planning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
 
-            Settings
-          </button>
-        </div>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="nav-brand">
+        <img src="./assets/images/logo1.svg" alt="Airbnb Logo" class="logo" />
+        <img src="./assets/images/logo2.svg" alt="Airbnb" class="brand-text" />
       </div>
-    </header>
-
-    <main class="main">
-      <div class="container">
-        <section class="trip-overview">
-          <h1 class="trip-title">Summer Escape 2026</h1>
-          <div class="trip-details">
-            <div class="detail-item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.3332 6.66659C13.3332 9.99525 9.6405 13.4619 8.4005 14.5326C8.28499 14.6194 8.14437 14.6664 7.99984 14.6664C7.85531 14.6664 7.71469 14.6194 7.59917 14.5326C6.35917 13.4619 2.6665 9.99525 2.6665 6.66659C2.6665 5.2521 3.22841 3.89554 4.2286 2.89535C5.2288 1.89516 6.58535 1.33325 7.99984 1.33325C9.41433 1.33325 10.7709 1.89516 11.7711 2.89535C12.7713 3.89554 13.3332 5.2521 13.3332 6.66659Z"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 8.66675C9.10457 8.66675 10 7.77132 10 6.66675C10 5.56218 9.10457 4.66675 8 4.66675C6.89543 4.66675 6 5.56218 6 6.66675C6 7.77132 6.89543 8.66675 8 8.66675Z"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <span>Bali, Indonesia</span>
-            </div>
-            <div class="detail-item">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <rect
-                  x="2"
-                  y="3"
-                  width="12"
-                  height="10"
-                  rx="2"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-                <path
-                  d="M16 7H0M5 0V4M11 0V4"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-              </svg>
-              <span>Aug 15-22, 2026</span>
-            </div>
-            <div class="detail-item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 1.33325V14.6666"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M11.3333 3.33325H6.33333C5.71449 3.33325 5.121 3.57908 4.68342 4.01667C4.24583 4.45425 4 5.04775 4 5.66659C4 6.28542 4.24583 6.87892 4.68342 7.3165C5.121 7.75409 5.71449 7.99992 6.33333 7.99992H9.66667C10.2855 7.99992 10.879 8.24575 11.3166 8.68334C11.7542 9.12092 12 9.71441 12 10.3333C12 10.9521 11.7542 11.5456 11.3166 11.9832C10.879 12.4208 10.2855 12.6666 9.66667 12.6666H4"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <span>$1200 per person</span>
-            </div>
-            <div class="detail-item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.6666 14V12.6667C10.6666 11.9594 10.3856 11.2811 9.88554 10.781C9.38544 10.281 8.70716 10 7.99992 10H3.99992C3.29267 10 2.6144 10.281 2.1143 10.781C1.6142 11.2811 1.33325 11.9594 1.33325 12.6667V14"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10.6667 2.08545C11.2386 2.2337 11.745 2.56763 12.1065 3.03482C12.4681 3.50202 12.6642 4.07604 12.6642 4.66678C12.6642 5.25752 12.4681 5.83154 12.1065 6.29874C11.745 6.76594 11.2386 7.09987 10.6667 7.24812"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14.6667 14V12.6667C14.6663 12.0758 14.4697 11.5019 14.1077 11.0349C13.7457 10.5679 13.2388 10.2344 12.6667 10.0867"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M5.99992 7.33333C7.47268 7.33333 8.66659 6.13943 8.66659 4.66667C8.66659 3.19391 7.47268 2 5.99992 2C4.52716 2 3.33325 3.19391 3.33325 4.66667C3.33325 6.13943 4.52716 7.33333 5.99992 7.33333Z"
-                  stroke="#737373"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <span>4 friends</span>
-            </div>
-          </div>
-        </section>
-
-        <nav class="tab-nav">
-          <button class="tab-btn active" data-tab="overview">Overview</button>
-          <button class="tab-btn" data-tab="destinations">Destinations</button>
-          <button class="tab-btn" data-tab="activities">Activities</button>
-          <button class="tab-btn" data-tab="expenses">Expenses</button>
-          <button class="tab-btn" data-tab="chat">Chat</button>
-        </nav>
-
-        <div class="tab-content">
-          <div id="overview" class="tab-pane active">
-            <div class="dashboard-grid">
-              <div class="card">
-                <div class="card-header">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.5 9.99992L9.16667 11.6666L12.5 8.33325"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M4.16675 5.83341C4.16675 4.91675 4.91675 4.16675 5.83341 4.16675H14.1667C14.6088 4.16675 15.0327 4.34234 15.3453 4.6549C15.6578 4.96746 15.8334 5.39139 15.8334 5.83341V15.8334H4.16675V5.83341Z"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M18.3334 15.8333H1.66675"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <h3>Voting Progress</h3>
-                </div>
-                <div class="progress-list">
-                  <div class="progress-item">
-                    <span class="progress-label">Destinations</span>
-                    <span class="progress-value">75%</span>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 75%"></div>
-                    </div>
-                  </div>
-                  <div class="progress-item">
-                    <span class="progress-label">Dates</span>
-                    <span class="progress-value">60%</span>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 60%"></div>
-                    </div>
-                  </div>
-                  <div class="progress-item">
-                    <span class="progress-label">Activities</span>
-                    <span class="progress-value">40%</span>
-                    <div class="progress-bar">
-                      <div class="progress-fill" style="width: 40%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10 1.66675V18.3334"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14.1667 4.16675H7.91667C7.14312 4.16675 6.40125 4.47404 5.85427 5.02102C5.30729 5.568 5 6.30987 5 7.08341C5 7.85696 5.30729 8.59883 5.85427 9.14581C6.40125 9.69279 7.14312 10.0001 7.91667 10.0001H12.0833C12.8569 10.0001 13.5987 10.3074 14.1457 10.8544C14.6927 11.4013 15 12.1432 15 12.9167C15 13.6903 14.6927 14.4322 14.1457 14.9791C13.5987 15.5261 12.8569 15.8334 12.0833 15.8334H5"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <h3>Budget Overview</h3>
-                </div>
-                <div class="budget-list">
-                  <div class="budget-item">
-                    <span class="budget-label">accommodation</span>
-                    <span class="budget-amount">$400</span>
-                  </div>
-                  <div class="budget-item">
-                    <span class="budget-label">flights</span>
-                    <span class="budget-amount">$600</span>
-                  </div>
-                  <div class="budget-item">
-                    <span class="budget-label">activities</span>
-                    <span class="budget-amount">$150</span>
-                  </div>
-                  <div class="budget-item">
-                    <span class="budget-label">food</span>
-                    <span class="budget-amount">$50</span>
-                  </div>
-                  <div class="budget-total">
-                    <span class="budget-label">Total per person</span>
-                    <span class="budget-amount total">$1200</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M13.3334 17.5V15.8333C13.3334 14.9493 12.9822 14.1014 12.3571 13.4763C11.732 12.8512 10.8841 12.5 10.0001 12.5H5.00008C4.11603 12.5 3.26818 12.8512 2.64306 13.4763C2.01794 14.1014 1.66675 14.9493 1.66675 15.8333V17.5"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M13.3333 2.60669C14.048 2.792 14.6811 3.20941 15.133 3.79341C15.5849 4.37741 15.8301 5.09493 15.8301 5.83336C15.8301 6.57178 15.5849 7.28931 15.133 7.8733C14.6811 8.4573 14.048 8.87471 13.3333 9.06002"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M18.3333 17.5001V15.8334C18.3327 15.0948 18.0869 14.3774 17.6344 13.7937C17.1819 13.2099 16.5484 12.793 15.8333 12.6084"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M7.50008 9.16667C9.34103 9.16667 10.8334 7.67428 10.8334 5.83333C10.8334 3.99238 9.34103 2.5 7.50008 2.5C5.65913 2.5 4.16675 3.99238 4.16675 5.83333C4.16675 7.67428 5.65913 9.16667 7.50008 9.16667Z"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <h3>Group Members</h3>
-                </div>
-                <div class="member-list">
-                  <div class="member-item">
-                    <img
-                      src="./assets/images/user.png"
-                      alt="Alex Chen"
-                      class="member-avatar"
-                    />
-                    <span class="member-name">Alex Chen</span>
-                    <span class="member-status">Active</span>
-                  </div>
-                  <div class="member-item">
-                    <img
-                      src="./assets/images/user.png"
-                      alt="Sarah Johnson"
-                      class="member-avatar"
-                    />
-                    <span class="member-name">Sarah Johnson</span>
-                    <span class="member-status">Active</span>
-                  </div>
-                  <div class="member-item">
-                    <img
-                      src="./assets/images/user.png"
-                      alt="Mike Wilson"
-                      class="member-avatar"
-                    />
-                    <span class="member-name">Mike Wilson</span>
-                    <span class="member-status">Active</span>
-                  </div>
-                  <div class="member-item">
-                    <img
-                      src="./assets/images/user.png"
-                      alt="Emma Davis"
-                      class="member-avatar"
-                    />
-                    <span class="member-name">Emma Davis</span>
-                    <span class="member-status">Active</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <section class="quick-actions">
-              <h3>Quick Actions</h3>
-              <div class="action-grid">
-                <button class="action-card primary">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M8 1L10.5 6L16 6.75L12 10.5L13 16L8 13.25L3 16L4 10.5L0 6.75L5.5 6L8 1Z"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    />
-                  </svg>
-                  <span>Vote on Destinations</span>
-                </button>
-                <button class="action-card">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6 8.00008L7.33333 9.33341L10 6.66675"
-                      stroke="#262626"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M3.33325 4.66659C3.33325 3.93325 3.93325 3.33325 4.66659 3.33325H11.3333C11.6869 3.33325 12.026 3.47373 12.2761 3.72378C12.5261 3.97382 12.6666 4.31296 12.6666 4.66659V12.6666H3.33325V4.66659Z"
-                      stroke="#262626"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14.6666 12.6667H1.33325"
-                      stroke="#262626"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>Vote on Activities</span>
-                </button>
-                <button class="action-card">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8 1.33325V14.6666"
-                      stroke="#262626"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M11.3333 3.33325H6.33333C5.71449 3.33325 5.121 3.57908 4.68342 4.01667C4.24583 4.45425 4 5.04775 4 5.66659C4 6.28542 4.24583 6.87892 4.68342 7.3165C5.121 7.75409 5.71449 7.99992 6.33333 7.99992H9.66667C10.2855 7.99992 10.879 8.24575 11.3166 8.68334C11.7542 9.12092 12 9.71441 12 10.3333C12 10.9521 11.7542 11.5456 11.3166 11.9832C10.879 12.4208 10.2855 12.6666 9.66667 12.6666H4"
-                      stroke="#262626"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <span>Split Expenses</span>
-                </button>
-                <button class="action-card">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_2584_296)">
-                      <path
-                        d="M1.99462 10.8946C2.09265 11.1419 2.11447 11.4128 2.05729 11.6726L1.34729 13.866C1.32441 13.9772 1.33033 14.0924 1.36447 14.2007C1.39862 14.309 1.45987 14.4068 1.5424 14.4848C1.62494 14.5628 1.72603 14.6184 1.83609 14.6464C1.94615 14.6744 2.06153 14.6738 2.17129 14.6446L4.44662 13.9793C4.69177 13.9307 4.94564 13.9519 5.17929 14.0406C6.60288 14.7054 8.21553 14.8461 9.73272 14.4378C11.2499 14.0295 12.5741 13.0984 13.4718 11.8089C14.3694 10.5193 14.7827 8.95423 14.6388 7.38966C14.4949 5.82509 13.8031 4.3616 12.6853 3.25742C11.5676 2.15324 10.0958 1.47932 8.52955 1.35456C6.96333 1.2298 5.40338 1.66221 4.12492 2.57552C2.84646 3.48882 1.93164 4.82432 1.54189 6.34638C1.15213 7.86845 1.31247 9.47926 1.99462 10.8946Z"
-                        stroke="#262626"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_2584_296">
-                        <rect width="16" height="16" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-
-                  <span>Group Chat</span>
-                </button>
-              </div>
-            </section>
-          </div>
-
-          <div id="destinations" class="tab-pane">
-            <div class="card">
-              <div class="card-header">
-                <h3>Choose Your Destination</h3>
-                <p>
-                  Vote for your preferred destination or search to add new
-                  options.
-                </p>
-              </div>
-
-              <div class="add-destination">
-                <div class="add-destination-header">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16.6668 8.33341C16.6668 12.4942 12.051 16.8276 10.501 18.1659C10.3566 18.2745 10.1808 18.3332 10.0002 18.3332C9.8195 18.3332 9.64373 18.2745 9.49933 18.1659C7.94933 16.8276 3.3335 12.4942 3.3335 8.33341C3.3335 6.5653 4.03588 4.86961 5.28612 3.61937C6.53636 2.36913 8.23205 1.66675 10.0002 1.66675C11.7683 1.66675 13.464 2.36913 14.7142 3.61937C15.9645 4.86961 16.6668 6.5653 16.6668 8.33341Z"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M10 10.8333C11.3807 10.8333 12.5 9.71396 12.5 8.33325C12.5 6.95254 11.3807 5.83325 10 5.83325C8.61929 5.83325 7.5 6.95254 7.5 8.33325C7.5 9.71396 8.61929 10.8333 10 10.8333Z"
-                      stroke="#F41542"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <h4>Add New Destination</h4>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search for destinations (e.g., Tokyo, Paris, Dubai...)"
-                  class="destination-search"
-                />
-              </div>
-
-              <div class="destinations-section">
-                <h4>Current Options (3)</h4>
-                <div class="destinations-grid">
-                  <div class="destination-card">
-                    <div class="destination-image">
-                      <img src="./assets/images/image1.png" alt="Bali, Indonesia" />
-                      <div class="vote-badge">3 votes</div>
-                    </div>
-                    <div class="destination-info">
-                      <h5>Bali, Indonesia</h5>
-                      <p class="destination-price">$1,200 per person</p>
-                      <button class="btn btn-primary btn-sm">Vote</button>
-                    </div>
-                  </div>
-                  <div class="destination-card">
-                    <div class="destination-image">
-                      <img src="./assets/images/image2.png" alt="Santorini, Greece" />
-                      <div class="vote-badge">2 votes</div>
-                    </div>
-                    <div class="destination-info">
-                      <h5>Santorini, Greece</h5>
-                      <p class="destination-price">$1,500 per person</p>
-                      <button class="btn btn-primary btn-sm">Vote</button>
-                    </div>
-                  </div>
-                  <div class="destination-card">
-                    <div class="destination-image">
-                      <img src="./assets/images/image3.png" alt="Costa Rica" />
-                      <div class="vote-badge">1 votes</div>
-                    </div>
-                    <div class="destination-info">
-                      <h5>Costa Rica</h5>
-                      <p class="destination-price">$1,000 per person</p>
-                      <button class="btn btn-primary btn-sm">Vote</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="activities" class="tab-pane">
-            <div class="card">
-              <div class="card-header">
-                <h3>Vote on Activities</h3>
-                <p>Select activities you'd like to do during the trip.</p>
-              </div>
-              <div class="activities-list">
-                <div class="activity-item">
-                  <div class="activity-info">
-                    <h4>Snorkeling Tour</h4>
-                    <p>$45 per person</p>
-                  </div>
-                  <div class="activity-votes">
-                    <span>4 votes</span>
-                    <button class="btn btn-secondary btn-sm">Vote</button>
-                  </div>
-                </div>
-                <div class="activity-item">
-                  <div class="activity-info">
-                    <h4>Temple Visit</h4>
-                    <p>$25 per person</p>
-                  </div>
-                  <div class="activity-votes">
-                    <span>3 votes</span>
-                    <button class="btn btn-secondary btn-sm">Vote</button>
-                  </div>
-                </div>
-                <div class="activity-item">
-                  <div class="activity-info">
-                    <h4>Cooking Class</h4>
-                    <p>$60 per person</p>
-                  </div>
-                  <div class="activity-votes">
-                    <span>2 votes</span>
-                    <button class="btn btn-secondary btn-sm">Vote</button>
-                  </div>
-                </div>
-                <div class="activity-item">
-                  <div class="activity-info">
-                    <h4>Volcano Hike</h4>
-                    <p>$80 per person</p>
-                  </div>
-                  <div class="activity-votes">
-                    <span>2 votes</span>
-                    <button class="btn btn-secondary btn-sm">Vote</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="expenses" class="tab-pane">
-            <div class="card">
-              <div class="card-header">
-                <h3>Expense Splitting</h3>
-                <p>Track and split costs among group members.</p>
-              </div>
-
-              <div class="expense-breakdown">
-                <div class="expense-section">
-                  <h4>Cost Breakdown</h4>
-                  <div class="expense-list">
-                    <div class="expense-item">
-                      <span class="expense-label">accommodation</span>
-                      <span class="expense-amount">$400</span>
-                    </div>
-                    <div class="expense-item">
-                      <span class="expense-label">flights</span>
-                      <span class="expense-amount">$600</span>
-                    </div>
-                    <div class="expense-item">
-                      <span class="expense-label">activities</span>
-                      <span class="expense-amount">$150</span>
-                    </div>
-                    <div class="expense-item">
-                      <span class="expense-label">food</span>
-                      <span class="expense-amount">$50</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="expense-section">
-                  <h4>Per Person Split</h4>
-                  <div class="split-list">
-                    <div class="split-item">
-                      <img
-                        src="./assets/images/user.png"
-                        alt="Alex Chen"
-                        class="split-avatar"
-                      />
-                      <span class="split-name">Alex Chen</span>
-                      <span class="split-amount">$1200</span>
-                    </div>
-                    <div class="split-item">
-                      <img
-                        src="./assets/images/user.png"
-                        alt="Sarah Johnson"
-                        class="split-avatar"
-                      />
-                      <span class="split-name">Sarah Johnson</span>
-                      <span class="split-amount">$1200</span>
-                    </div>
-                    <div class="split-item">
-                      <img
-                        src="./assets/images/user.png"
-                        alt="Mike Wilson"
-                        class="split-avatar"
-                      />
-                      <span class="split-name">Mike Wilson</span>
-                      <span class="split-amount">$1200</span>
-                    </div>
-                    <div class="split-item">
-                      <img
-                        src="./assets/images/user.png"
-                        alt="Emma Davis"
-                        class="split-avatar"
-                      />
-                      <span class="split-name">Emma Davis</span>
-                      <span class="split-amount">$1200</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button class="btn btn-primary btn-full">Book Trip Now</button>
-            </div>
-          </div>
-
-          <div id="chat" class="tab-pane">
-            <div class="card">
-              <div class="card-header">
-                <h3>Group Discussion</h3>
-                <p>Chat with your group to finalize plans.</p>
-              </div>
-              <div class="chat-container">
-                <div class="chat-messages">
-                  <div class="chat-placeholder"></div>
-                </div>
-                <div class="chat-input">
-                  <input
-                    type="text"
-                    placeholder="Type a message..."
-                    class="message-input"
-                  />
-                  <button class="btn btn-primary">Send</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <div id="bookingModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Summer Escape 2026</h2>
-          <p>Review your trip details before confirming</p>
-          <button class="modal-close">&times;</button>
-        </div>
-
-        <div class="booking-details">
-          <div class="booking-info">
-            <div class="info-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.6668 8.33317C16.6668 12.494 12.051 16.8273 10.501 18.1657C10.3566 18.2742 10.1808 18.333 10.0002 18.333C9.8195 18.333 9.64373 18.2742 9.49933 18.1657C7.94933 16.8273 3.3335 12.494 3.3335 8.33317C3.3335 6.56506 4.03588 4.86937 5.28612 3.61913C6.53636 2.36888 8.23205 1.6665 10.0002 1.6665C11.7683 1.6665 13.464 2.36888 14.7142 3.61913C15.9645 4.86937 16.6668 6.56506 16.6668 8.33317Z"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M10 10.8335C11.3807 10.8335 12.5 9.71421 12.5 8.3335C12.5 6.95278 11.3807 5.8335 10 5.8335C8.61929 5.8335 7.5 6.95278 7.5 8.3335C7.5 9.71421 8.61929 10.8335 10 10.8335Z"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <div>
-                <h4>Bali, Indonesia</h4>
-                <p>Villa Serenity - 4BR Private Pool Villa</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.6665 1.6665V4.99984"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M13.3335 1.6665V4.99984"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M15.8333 3.3335H4.16667C3.24619 3.3335 2.5 4.07969 2.5 5.00016V16.6668C2.5 17.5873 3.24619 18.3335 4.16667 18.3335H15.8333C16.7538 18.3335 17.5 17.5873 17.5 16.6668V5.00016C17.5 4.07969 16.7538 3.3335 15.8333 3.3335Z"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M2.5 8.3335H17.5"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <div>
-                <h4>Aug 15-22, 2025</h4>
-                <p>7 nights</p>
-              </div>
-            </div>
-
-            <div class="info-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M13.3332 17.5V15.8333C13.3332 14.9493 12.982 14.1014 12.3569 13.4763C11.7317 12.8512 10.8839 12.5 9.99984 12.5H4.99984C4.11578 12.5 3.26794 12.8512 2.64281 13.4763C2.01769 14.1014 1.6665 14.9493 1.6665 15.8333V17.5"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M13.3335 2.60645C14.0483 2.79175 14.6813 3.20917 15.1332 3.79316C15.5851 4.37716 15.8303 5.09469 15.8303 5.83311C15.8303 6.57154 15.5851 7.28906 15.1332 7.87306C14.6813 8.45706 14.0483 8.87447 13.3335 9.05978"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M18.3335 17.5001V15.8334C18.3329 15.0948 18.0871 14.3774 17.6346 13.7937C17.1821 13.2099 16.5486 12.793 15.8335 12.6084"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M7.49984 9.16667C9.34079 9.16667 10.8332 7.67428 10.8332 5.83333C10.8332 3.99238 9.34079 2.5 7.49984 2.5C5.65889 2.5 4.1665 3.99238 4.1665 5.83333C4.1665 7.67428 5.65889 9.16667 7.49984 9.16667Z"
-                  stroke="#F41542"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <div>
-                <h4>4 travelers</h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="cost-breakdown">
-            <h4>Cost Breakdown</h4>
-            <div class="cost-list">
-              <div class="cost-item">
-                <span>accommodation</span>
-                <span>$1600</span>
-              </div>
-              <div class="cost-item">
-                <span>flights</span>
-                <span>$2400</span>
-              </div>
-              <div class="cost-item">
-                <span>activities</span>
-                <span>$520</span>
-              </div>
-              <div class="cost-item">
-                <span>food</span>
-                <span>$280</span>
-              </div>
-              <div class="cost-total">
-                <span>Total</span>
-                <span class="total-amount">$4800</span>
-              </div>
-              <div class="cost-per-person">
-                <span>Per person</span>
-                <span>$1200</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="booking-terms">
-          <div class="terms-info">
-            <h4>Important Information</h4>
-            <ul>
-              <li>Free cancellation until 7 days before check-in</li>
-              <li>All group members must have valid ID for check-in</li>
-              <li>Payment will be charged to the group organizer</li>
-              <li>Activity bookings are non-refundable after confirmation</li>
-            </ul>
-          </div>
-
-          <div class="terms-agreement">
-            <label class="checkbox-label">
-              <input type="checkbox" id="termsCheckbox" />
-              <span class="checkmark"></span>
-              I agree to the <a href="#">Terms of Service</a> and
-              <a href="#">Privacy Policy</a>
-            </label>
-          </div>
-        </div>
-
-        <div class="booking-total">
-          <div class="total-info">
-            <h3>Total Amount</h3>
-            <p>$1200 per person × 4 people</p>
-          </div>
-          <div class="total-price">
-            <span class="price">$4800</span>
-            <p>All expenses included</p>
-          </div>
-        </div>
-
-        <button class="btn btn-primary btn-full" id="confirmBooking" disabled>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <div class="nav-actions">
+        <button class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M13 4L6 11L3 8"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+              d="M12 5.33325C13.1046 5.33325 14 4.43782 14 3.33325C14 2.22868 13.1046 1.33325 12 1.33325C10.8954 1.33325 10 2.22868 10 3.33325C10 4.43782 10.8954 5.33325 12 5.33325Z"
+              stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M4 10C5.10457 10 6 9.10457 6 8C6 6.89543 5.10457 6 4 6C2.89543 6 2 6.89543 2 8C2 9.10457 2.89543 10 4 10Z"
+              stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M12 14.6667C13.1046 14.6667 14 13.7713 14 12.6667C14 11.5622 13.1046 10.6667 12 10.6667C10.8954 10.6667 10 11.5622 10 12.6667C10 13.7713 10.8954 14.6667 12 14.6667Z"
+              stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5.72656 9.00659L10.2799 11.6599" stroke="#262626" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M10.2732 4.34009L5.72656 6.99342" stroke="#262626" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
-          Confirm Booking
+
+          Invite Friends
         </button>
-
-        <p class="booking-security">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <button class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M8 1L3 3V7C3 10.5 5.5 13.5 8 14C10.5 13.5 13 10.5 13 7V3L8 1Z"
-              stroke="currentColor"
-              stroke-width="2"
-            />
+              d="M6.44729 2.75735C6.48402 2.37091 6.66351 2.01205 6.95069 1.75087C7.23787 1.4897 7.61211 1.34497 8.00029 1.34497C8.38847 1.34497 8.76271 1.4897 9.04989 1.75087C9.33707 2.01205 9.51656 2.37091 9.55329 2.75735C9.57537 3.00699 9.65727 3.24763 9.79205 3.45891C9.92683 3.67019 10.1105 3.84589 10.3276 3.97114C10.5447 4.09638 10.7887 4.16749 11.0391 4.17843C11.2895 4.18938 11.5388 4.13984 11.766 4.03402C12.1187 3.87387 12.5184 3.8507 12.8873 3.96901C13.2562 4.08732 13.5678 4.33865 13.7616 4.67409C13.9554 5.00953 14.0175 5.40507 13.9357 5.78373C13.854 6.1624 13.6342 6.4971 13.3193 6.72269C13.1142 6.86658 12.9468 7.05776 12.8312 7.28004C12.7157 7.50231 12.6553 7.74916 12.6553 7.99969C12.6553 8.25021 12.7157 8.49706 12.8312 8.71934C12.9468 8.94161 13.1142 9.13279 13.3193 9.27669C13.6342 9.50228 13.854 9.83697 13.9357 10.2156C14.0175 10.5943 13.9554 10.9898 13.7616 11.3253C13.5678 11.6607 13.2562 11.9121 12.8873 12.0304C12.5184 12.1487 12.1187 12.1255 11.766 11.9654C11.5388 11.8595 11.2895 11.81 11.0391 11.8209C10.7887 11.8319 10.5447 11.903 10.3276 12.0282C10.1105 12.1535 9.92683 12.3292 9.79205 12.5405C9.65727 12.7517 9.57537 12.9924 9.55329 13.242C9.51656 13.6285 9.33707 13.9873 9.04989 14.2485C8.76271 14.5097 8.38847 14.6544 8.00029 14.6544C7.61211 14.6544 7.23787 14.5097 6.95069 14.2485C6.66351 13.9873 6.48402 13.6285 6.44729 13.242C6.42525 12.9923 6.34336 12.7516 6.20854 12.5402C6.07371 12.3288 5.88994 12.1531 5.67278 12.0278C5.45562 11.9026 5.21147 11.8315 4.96101 11.8206C4.71055 11.8097 4.46116 11.8594 4.23396 11.9654C3.88122 12.1255 3.48151 12.1487 3.11263 12.0304C2.74374 11.9121 2.43207 11.6607 2.23828 11.3253C2.04449 10.9898 1.98244 10.5943 2.0642 10.2156C2.14596 9.83697 2.36569 9.50228 2.68063 9.27669C2.88571 9.13279 3.05311 8.94161 3.16868 8.71934C3.28426 8.49706 3.34459 8.25021 3.34459 7.99969C3.34459 7.74916 3.28426 7.50231 3.16868 7.28004C3.05311 7.05776 2.88571 6.86658 2.68063 6.72269C2.36614 6.49698 2.14679 6.16242 2.06523 5.78401C1.98366 5.4056 2.0457 5.01038 2.23928 4.67516C2.43287 4.33994 2.74417 4.08867 3.11269 3.97018C3.4812 3.85169 3.88061 3.87444 4.23329 4.03402C4.46046 4.13984 4.70979 4.18938 4.96016 4.17843C5.21053 4.16749 5.45458 4.09638 5.67165 3.97114C5.88872 3.84589 6.07242 3.67019 6.2072 3.45891C6.34198 3.24763 6.42388 3.00699 6.44596 2.75735"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          Your booking is secure and protected
-        </p>
+
+          Settings
+        </button>
       </div>
     </div>
+  </header>
 
-    <script src="./scripts/script.js"></script>
-  </body>
+  <main class="main">
+    <div class="container">
+      <section class="trip-overview">
+        <h1 class="trip-title">Summer Escape 2026</h1>
+        <div class="trip-details">
+          <div class="detail-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.3332 6.66659C13.3332 9.99525 9.6405 13.4619 8.4005 14.5326C8.28499 14.6194 8.14437 14.6664 7.99984 14.6664C7.85531 14.6664 7.71469 14.6194 7.59917 14.5326C6.35917 13.4619 2.6665 9.99525 2.6665 6.66659C2.6665 5.2521 3.22841 3.89554 4.2286 2.89535C5.2288 1.89516 6.58535 1.33325 7.99984 1.33325C9.41433 1.33325 10.7709 1.89516 11.7711 2.89535C12.7713 3.89554 13.3332 5.2521 13.3332 6.66659Z"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M8 8.66675C9.10457 8.66675 10 7.77132 10 6.66675C10 5.56218 9.10457 4.66675 8 4.66675C6.89543 4.66675 6 5.56218 6 6.66675C6 7.77132 6.89543 8.66675 8 8.66675Z"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <span>Bali, Indonesia</span>
+          </div>
+          <div class="detail-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="2" />
+              <path d="M16 7H0M5 0V4M11 0V4" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <span>Aug 15-22, 2026</span>
+          </div>
+          <div class="detail-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 1.33325V14.6666" stroke="#737373" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M11.3333 3.33325H6.33333C5.71449 3.33325 5.121 3.57908 4.68342 4.01667C4.24583 4.45425 4 5.04775 4 5.66659C4 6.28542 4.24583 6.87892 4.68342 7.3165C5.121 7.75409 5.71449 7.99992 6.33333 7.99992H9.66667C10.2855 7.99992 10.879 8.24575 11.3166 8.68334C11.7542 9.12092 12 9.71441 12 10.3333C12 10.9521 11.7542 11.5456 11.3166 11.9832C10.879 12.4208 10.2855 12.6666 9.66667 12.6666H4"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <span>$1200 per person</span>
+          </div>
+          <div class="detail-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.6666 14V12.6667C10.6666 11.9594 10.3856 11.2811 9.88554 10.781C9.38544 10.281 8.70716 10 7.99992 10H3.99992C3.29267 10 2.6144 10.281 2.1143 10.781C1.6142 11.2811 1.33325 11.9594 1.33325 12.6667V14"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M10.6667 2.08545C11.2386 2.2337 11.745 2.56763 12.1065 3.03482C12.4681 3.50202 12.6642 4.07604 12.6642 4.66678C12.6642 5.25752 12.4681 5.83154 12.1065 6.29874C11.745 6.76594 11.2386 7.09987 10.6667 7.24812"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M14.6667 14V12.6667C14.6663 12.0758 14.4697 11.5019 14.1077 11.0349C13.7457 10.5679 13.2388 10.2344 12.6667 10.0867"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M5.99992 7.33333C7.47268 7.33333 8.66659 6.13943 8.66659 4.66667C8.66659 3.19391 7.47268 2 5.99992 2C4.52716 2 3.33325 3.19391 3.33325 4.66667C3.33325 6.13943 4.52716 7.33333 5.99992 7.33333Z"
+                stroke="#737373" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <span>4 friends</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="destinations">Destinations</button>
+        <button class="tab-btn" data-tab="activities">Activities</button>
+        <button class="tab-btn" data-tab="expenses">Expenses</button>
+        <button class="tab-btn" data-tab="chat">Chat</button>
+      </nav>
+
+      <div class="tab-content">
+        <div id="overview" class="tab-pane active">
+          <div class="dashboard-grid">
+            <div class="card">
+              <div class="card-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.5 9.99992L9.16667 11.6666L12.5 8.33325" stroke="#F41542" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M4.16675 5.83341C4.16675 4.91675 4.91675 4.16675 5.83341 4.16675H14.1667C14.6088 4.16675 15.0327 4.34234 15.3453 4.6549C15.6578 4.96746 15.8334 5.39139 15.8334 5.83341V15.8334H4.16675V5.83341Z"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M18.3334 15.8333H1.66675" stroke="#F41542" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+                <h3>Voting Progress</h3>
+              </div>
+              <div class="progress-list">
+                <div class="progress-item">
+                  <span class="progress-label">Destinations</span>
+                  <span class="progress-value">75%</span>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <span class="progress-label">Dates</span>
+                  <span class="progress-value">60%</span>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <span class="progress-label">Activities</span>
+                  <span class="progress-value">40%</span>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 1.66675V18.3334" stroke="#F41542" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M14.1667 4.16675H7.91667C7.14312 4.16675 6.40125 4.47404 5.85427 5.02102C5.30729 5.568 5 6.30987 5 7.08341C5 7.85696 5.30729 8.59883 5.85427 9.14581C6.40125 9.69279 7.14312 10.0001 7.91667 10.0001H12.0833C12.8569 10.0001 13.5987 10.3074 14.1457 10.8544C14.6927 11.4013 15 12.1432 15 12.9167C15 13.6903 14.6927 14.4322 14.1457 14.9791C13.5987 15.5261 12.8569 15.8334 12.0833 15.8334H5"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <h3>Budget Overview</h3>
+              </div>
+              <div class="budget-list">
+                <div class="budget-item">
+                  <span class="budget-label">accommodation</span>
+                  <span class="budget-amount">$400</span>
+                </div>
+                <div class="budget-item">
+                  <span class="budget-label">flights</span>
+                  <span class="budget-amount">$600</span>
+                </div>
+                <div class="budget-item">
+                  <span class="budget-label">activities</span>
+                  <span class="budget-amount">$150</span>
+                </div>
+                <div class="budget-item">
+                  <span class="budget-label">food</span>
+                  <span class="budget-amount">$50</span>
+                </div>
+                <div class="budget-total">
+                  <span class="budget-label">Total per person</span>
+                  <span class="budget-amount total">$1200</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M13.3334 17.5V15.8333C13.3334 14.9493 12.9822 14.1014 12.3571 13.4763C11.732 12.8512 10.8841 12.5 10.0001 12.5H5.00008C4.11603 12.5 3.26818 12.8512 2.64306 13.4763C2.01794 14.1014 1.66675 14.9493 1.66675 15.8333V17.5"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M13.3333 2.60669C14.048 2.792 14.6811 3.20941 15.133 3.79341C15.5849 4.37741 15.8301 5.09493 15.8301 5.83336C15.8301 6.57178 15.5849 7.28931 15.133 7.8733C14.6811 8.4573 14.048 8.87471 13.3333 9.06002"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M18.3333 17.5001V15.8334C18.3327 15.0948 18.0869 14.3774 17.6344 13.7937C17.1819 13.2099 16.5484 12.793 15.8333 12.6084"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M7.50008 9.16667C9.34103 9.16667 10.8334 7.67428 10.8334 5.83333C10.8334 3.99238 9.34103 2.5 7.50008 2.5C5.65913 2.5 4.16675 3.99238 4.16675 5.83333C4.16675 7.67428 5.65913 9.16667 7.50008 9.16667Z"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <h3>Group Members</h3>
+              </div>
+              <div class="member-list">
+                <div class="member-item">
+                  <img src="./assets/images/user.png" alt="Alex Chen" class="member-avatar" />
+                  <span class="member-name">Alex Chen</span>
+                  <span class="member-status">Active</span>
+                </div>
+                <div class="member-item">
+                  <img src="./assets/images/user.png" alt="Sarah Johnson" class="member-avatar" />
+                  <span class="member-name">Sarah Johnson</span>
+                  <span class="member-status">Active</span>
+                </div>
+                <div class="member-item">
+                  <img src="./assets/images/user.png" alt="Mike Wilson" class="member-avatar" />
+                  <span class="member-name">Mike Wilson</span>
+                  <span class="member-status">Active</span>
+                </div>
+                <div class="member-item">
+                  <img src="./assets/images/user.png" alt="Emma Davis" class="member-avatar" />
+                  <span class="member-name">Emma Davis</span>
+                  <span class="member-status">Active</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="action-grid">
+              <button class="action-card primary">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 1L10.5 6L16 6.75L12 10.5L13 16L8 13.25L3 16L4 10.5L0 6.75L5.5 6L8 1Z"
+                    stroke="currentColor" stroke-width="2" />
+                </svg>
+                <span>Vote on Destinations</span>
+              </button>
+              <button class="action-card">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 8.00008L7.33333 9.33341L10 6.66675" stroke="#262626" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M3.33325 4.66659C3.33325 3.93325 3.93325 3.33325 4.66659 3.33325H11.3333C11.6869 3.33325 12.026 3.47373 12.2761 3.72378C12.5261 3.97382 12.6666 4.31296 12.6666 4.66659V12.6666H3.33325V4.66659Z"
+                    stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M14.6666 12.6667H1.33325" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+                <span>Vote on Activities</span>
+              </button>
+              <button class="action-card">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 1.33325V14.6666" stroke="#262626" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M11.3333 3.33325H6.33333C5.71449 3.33325 5.121 3.57908 4.68342 4.01667C4.24583 4.45425 4 5.04775 4 5.66659C4 6.28542 4.24583 6.87892 4.68342 7.3165C5.121 7.75409 5.71449 7.99992 6.33333 7.99992H9.66667C10.2855 7.99992 10.879 8.24575 11.3166 8.68334C11.7542 9.12092 12 9.71441 12 10.3333C12 10.9521 11.7542 11.5456 11.3166 11.9832C10.879 12.4208 10.2855 12.6666 9.66667 12.6666H4"
+                    stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <span>Split Expenses</span>
+              </button>
+              <button class="action-card">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_2584_296)">
+                    <path
+                      d="M1.99462 10.8946C2.09265 11.1419 2.11447 11.4128 2.05729 11.6726L1.34729 13.866C1.32441 13.9772 1.33033 14.0924 1.36447 14.2007C1.39862 14.309 1.45987 14.4068 1.5424 14.4848C1.62494 14.5628 1.72603 14.6184 1.83609 14.6464C1.94615 14.6744 2.06153 14.6738 2.17129 14.6446L4.44662 13.9793C4.69177 13.9307 4.94564 13.9519 5.17929 14.0406C6.60288 14.7054 8.21553 14.8461 9.73272 14.4378C11.2499 14.0295 12.5741 13.0984 13.4718 11.8089C14.3694 10.5193 14.7827 8.95423 14.6388 7.38966C14.4949 5.82509 13.8031 4.3616 12.6853 3.25742C11.5676 2.15324 10.0958 1.47932 8.52955 1.35456C6.96333 1.2298 5.40338 1.66221 4.12492 2.57552C2.84646 3.48882 1.93164 4.82432 1.54189 6.34638C1.15213 7.86845 1.31247 9.47926 1.99462 10.8946Z"
+                      stroke="#262626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2584_296">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+                <span>Group Chat</span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <div id="destinations" class="tab-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3>Choose Your Destination</h3>
+              <p>
+                Vote for your preferred destination or search to add new
+                options.
+              </p>
+            </div>
+
+            <div class="add-destination">
+              <div class="add-destination-header">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.6668 8.33341C16.6668 12.4942 12.051 16.8276 10.501 18.1659C10.3566 18.2745 10.1808 18.3332 10.0002 18.3332C9.8195 18.3332 9.64373 18.2745 9.49933 18.1659C7.94933 16.8276 3.3335 12.4942 3.3335 8.33341C3.3335 6.5653 4.03588 4.86961 5.28612 3.61937C6.53636 2.36913 8.23205 1.66675 10.0002 1.66675C11.7683 1.66675 13.464 2.36913 14.7142 3.61937C15.9645 4.86961 16.6668 6.5653 16.6668 8.33341Z"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M10 10.8333C11.3807 10.8333 12.5 9.71396 12.5 8.33325C12.5 6.95254 11.3807 5.83325 10 5.83325C8.61929 5.83325 7.5 6.95254 7.5 8.33325C7.5 9.71396 8.61929 10.8333 10 10.8333Z"
+                    stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <h4>Add New Destination</h4>
+              </div>
+              <input type="text" placeholder="Search for destinations (e.g., Tokyo, Paris, Dubai...)"
+                class="destination-search" />
+            </div>
+
+            <div class="destinations-section">
+              <h4>Current Options (3)</h4>
+              <div class="destinations-grid">
+                <div class="destination-card">
+                  <div class="destination-image">
+                    <img src="./assets/images/bali.png" alt="Bali, Indonesia" />
+                    <div class="vote-badge">3 votes</div>
+                  </div>
+                  <div class="destination-info">
+                    <h5>Bali, Indonesia</h5>
+                    <p class="destination-price">$1,200 per person</p>
+                    <button class="btn btn-primary btn-sm">Vote</button>
+                  </div>
+                </div>
+                <div class="destination-card">
+                  <div class="destination-image">
+                    <img src="./assets/images/santorini.png" alt="Santorini, Greece" />
+                    <div class="vote-badge">2 votes</div>
+                  </div>
+                  <div class="destination-info">
+                    <h5>Santorini, Greece</h5>
+                    <p class="destination-price">$1,500 per person</p>
+                    <button class="btn btn-primary btn-sm">Vote</button>
+                  </div>
+                </div>
+                <div class="destination-card">
+                  <div class="destination-image">
+                    <img src="./assets/images/costa-rica.png" alt="Costa Rica" />
+                    <div class="vote-badge">1 votes</div>
+                  </div>
+                  <div class="destination-info">
+                    <h5>Costa Rica</h5>
+                    <p class="destination-price">$1,000 per person</p>
+                    <button class="btn btn-primary btn-sm">Vote</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="activities" class="tab-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3>Vote on Activities</h3>
+              <p>Select activities you'd like to do during the trip.</p>
+            </div>
+            <div class="activities-list">
+              <div class="activity-item">
+                <div class="activity-info">
+                  <h4>Snorkeling Tour</h4>
+                  <p>$45 per person</p>
+                </div>
+                <div class="activity-votes">
+                  <span>4 votes</span>
+                  <button class="btn btn-secondary btn-sm">Vote</button>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-info">
+                  <h4>Temple Visit</h4>
+                  <p>$25 per person</p>
+                </div>
+                <div class="activity-votes">
+                  <span>3 votes</span>
+                  <button class="btn btn-secondary btn-sm">Vote</button>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-info">
+                  <h4>Cooking Class</h4>
+                  <p>$60 per person</p>
+                </div>
+                <div class="activity-votes">
+                  <span>2 votes</span>
+                  <button class="btn btn-secondary btn-sm">Vote</button>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-info">
+                  <h4>Volcano Hike</h4>
+                  <p>$80 per person</p>
+                </div>
+                <div class="activity-votes">
+                  <span>2 votes</span>
+                  <button class="btn btn-secondary btn-sm">Vote</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="expenses" class="tab-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3>Expense Splitting</h3>
+              <p>Track and split costs among group members.</p>
+            </div>
+
+            <div class="expense-breakdown">
+              <div class="expense-section">
+                <h4>Cost Breakdown</h4>
+                <div class="expense-list">
+                  <div class="expense-item">
+                    <span class="expense-label">accommodation</span>
+                    <span class="expense-amount">$400</span>
+                  </div>
+                  <div class="expense-item">
+                    <span class="expense-label">flights</span>
+                    <span class="expense-amount">$600</span>
+                  </div>
+                  <div class="expense-item">
+                    <span class="expense-label">activities</span>
+                    <span class="expense-amount">$150</span>
+                  </div>
+                  <div class="expense-item">
+                    <span class="expense-label">food</span>
+                    <span class="expense-amount">$50</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="expense-section">
+                <h4>Per Person Split</h4>
+                <div class="split-list">
+                  <div class="split-item">
+                    <img src="./assets/images/user.png" alt="Alex Chen" class="split-avatar" />
+                    <span class="split-name">Alex Chen</span>
+                    <span class="split-amount">$1200</span>
+                  </div>
+                  <div class="split-item">
+                    <img src="./assets/images/user.png" alt="Sarah Johnson" class="split-avatar" />
+                    <span class="split-name">Sarah Johnson</span>
+                    <span class="split-amount">$1200</span>
+                  </div>
+                  <div class="split-item">
+                    <img src="./assets/images/user.png" alt="Mike Wilson" class="split-avatar" />
+                    <span class="split-name">Mike Wilson</span>
+                    <span class="split-amount">$1200</span>
+                  </div>
+                  <div class="split-item">
+                    <img src="./assets/images/user.png" alt="Emma Davis" class="split-avatar" />
+                    <span class="split-name">Emma Davis</span>
+                    <span class="split-amount">$1200</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-full">Book Trip Now</button>
+          </div>
+        </div>
+
+        <div id="chat" class="tab-pane">
+          <div class="card">
+            <div class="card-header">
+              <h3>Group Discussion</h3>
+              <p>Chat with your group to finalize plans.</p>
+            </div>
+            <div class="chat-container">
+              <div class="chat-messages">
+                <div class="chat-placeholder"></div>
+              </div>
+              <div class="chat-input">
+                <input type="text" placeholder="Type a message..." class="message-input" />
+                <button class="btn btn-primary">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Summer Escape 2026</h2>
+        <p>Review your trip details before confirming</p>
+        <button class="modal-close">&times;</button>
+      </div>
+
+      <div class="booking-details">
+        <div class="booking-info">
+          <div class="info-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6668 8.33317C16.6668 12.494 12.051 16.8273 10.501 18.1657C10.3566 18.2742 10.1808 18.333 10.0002 18.333C9.8195 18.333 9.64373 18.2742 9.49933 18.1657C7.94933 16.8273 3.3335 12.494 3.3335 8.33317C3.3335 6.56506 4.03588 4.86937 5.28612 3.61913C6.53636 2.36888 8.23205 1.6665 10.0002 1.6665C11.7683 1.6665 13.464 2.36888 14.7142 3.61913C15.9645 4.86937 16.6668 6.56506 16.6668 8.33317Z"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M10 10.8335C11.3807 10.8335 12.5 9.71421 12.5 8.3335C12.5 6.95278 11.3807 5.8335 10 5.8335C8.61929 5.8335 7.5 6.95278 7.5 8.3335C7.5 9.71421 8.61929 10.8335 10 10.8335Z"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <div>
+              <h4>Bali, Indonesia</h4>
+              <p>Villa Serenity - 4BR Private Pool Villa</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.6665 1.6665V4.99984" stroke="#F41542" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M13.3335 1.6665V4.99984" stroke="#F41542" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M15.8333 3.3335H4.16667C3.24619 3.3335 2.5 4.07969 2.5 5.00016V16.6668C2.5 17.5873 3.24619 18.3335 4.16667 18.3335H15.8333C16.7538 18.3335 17.5 17.5873 17.5 16.6668V5.00016C17.5 4.07969 16.7538 3.3335 15.8333 3.3335Z"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M2.5 8.3335H17.5" stroke="#F41542" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <div>
+              <h4>Aug 15-22, 2026</h4>
+              <p>7 nights</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.3332 17.5V15.8333C13.3332 14.9493 12.982 14.1014 12.3569 13.4763C11.7317 12.8512 10.8839 12.5 9.99984 12.5H4.99984C4.11578 12.5 3.26794 12.8512 2.64281 13.4763C2.01769 14.1014 1.6665 14.9493 1.6665 15.8333V17.5"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M13.3335 2.60645C14.0483 2.79175 14.6813 3.20917 15.1332 3.79316C15.5851 4.37716 15.8303 5.09469 15.8303 5.83311C15.8303 6.57154 15.5851 7.28906 15.1332 7.87306C14.6813 8.45706 14.0483 8.87447 13.3335 9.05978"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M18.3335 17.5001V15.8334C18.3329 15.0948 18.0871 14.3774 17.6346 13.7937C17.1821 13.2099 16.5486 12.793 15.8335 12.6084"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M7.49984 9.16667C9.34079 9.16667 10.8332 7.67428 10.8332 5.83333C10.8332 3.99238 9.34079 2.5 7.49984 2.5C5.65889 2.5 4.1665 3.99238 4.1665 5.83333C4.1665 7.67428 5.65889 9.16667 7.49984 9.16667Z"
+                stroke="#F41542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <div>
+              <h4>4 travelers</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="cost-breakdown">
+          <h4>Cost Breakdown</h4>
+          <div class="cost-list">
+            <div class="cost-item">
+              <span>accommodation</span>
+              <span>$1600</span>
+            </div>
+            <div class="cost-item">
+              <span>flights</span>
+              <span>$2400</span>
+            </div>
+            <div class="cost-item">
+              <span>activities</span>
+              <span>$520</span>
+            </div>
+            <div class="cost-item">
+              <span>food</span>
+              <span>$280</span>
+            </div>
+            <div class="cost-total">
+              <span>Total</span>
+              <span class="total-amount">$4800</span>
+            </div>
+            <div class="cost-per-person">
+              <span>Per person</span>
+              <span>$1200</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-terms">
+        <div class="terms-info">
+          <h4>Important Information</h4>
+          <ul>
+            <li>Free cancellation until 7 days before check-in</li>
+            <li>All group members must have valid ID for check-in</li>
+            <li>Payment will be charged to the group organizer</li>
+            <li>Activity bookings are non-refundable after confirmation</li>
+          </ul>
+        </div>
+
+        <div class="terms-agreement">
+          <label class="checkbox-label">
+            <input type="checkbox" id="termsCheckbox" />
+            <span class="checkmark"></span>
+            I agree to the <a href="#">Terms of Service</a> and
+            <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+      </div>
+
+      <div class="booking-total">
+        <div class="total-info">
+          <h3>Total Amount</h3>
+          <p>$1200 per person × 4 people</p>
+        </div>
+        <div class="total-price">
+          <span class="price">$4800</span>
+          <p>All expenses included</p>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-full" id="confirmBooking" disabled>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M13 4L6 11L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Confirm Booking
+      </button>
+
+      <p class="booking-security">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.3332 8.66664C13.3332 12 10.9998 13.6666 8.2265 14.6333C8.08128 14.6825 7.92353 14.6802 7.77984 14.6266C4.99984 13.6666 2.6665 12 2.6665 8.66664V3.99997C2.6665 3.82316 2.73674 3.65359 2.86177 3.52857C2.98679 3.40355 3.15636 3.33331 3.33317 3.33331C4.6665 3.33331 6.33317 2.53331 7.49317 1.51997C7.63441 1.39931 7.81407 1.33301 7.99984 1.33301C8.1856 1.33301 8.36527 1.39931 8.5065 1.51997C9.67317 2.53997 11.3332 3.33331 12.6665 3.33331C12.8433 3.33331 13.0129 3.40355 13.1379 3.52857C13.2629 3.65359 13.3332 3.82316 13.3332 3.99997V8.66664Z"
+            stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+        </svg>
+        Your booking is secure and protected
+      </p>
+    </div>
+  </div>
+
+  <script src="./scripts/script.js"></script>
+</body>
+
 </html>
