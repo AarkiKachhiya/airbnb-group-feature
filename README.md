@@ -5,7 +5,6 @@ This project is a design and development task for creating a feature that enable
 ## Features
 - Group planning and collaboration for vacations  
 - Responsive UI across devices  
-- Clickable Figma prototype included  
 - Built using HTML, CSS, and JavaScript
 
 ## How to Run
